@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LocationListComponent } from './components/location-list/location-list.component';
+import { VoucherComponent } from './components/voucher/voucher.component';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 
 const routes: Routes = [
-	{ path: 'main', component: LocationListComponent },
- 	{ path: '', redirectTo: '/main', pathMatch: 'full' },
- ];
+	{ path: '', redirectTo: '/voucher', pathMatch: 'full' },
+	{ path: 'voucher', component: VoucherComponent, canActivate: [AuthGuard] },
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
 export class AppRoutingModule { }
