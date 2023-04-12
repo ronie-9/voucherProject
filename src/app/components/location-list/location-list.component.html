@@ -1,0 +1,17 @@
+<div class="container">
+	<div class="table_header">
+		<div class="name_address"><strong>Name &amp; address</strong></div>
+		<div class="hours"><strong>Opening hours</strong></div>
+	</div>
+	<div class="table_content" *ngFor="let location of locations">
+	    <div class="name_address">
+	    	<p><strong>{{location.name}}</strong></p>
+	    	<p>{{location.address}},</p>
+	    	<p>{{location.city}}</p>
+	        <a href="">View on map</a>
+	    </div>
+	    <div class="hours">
+	    	<p>{{location.hours}}</p>
+	    </div>
+	</div>
+</div>
